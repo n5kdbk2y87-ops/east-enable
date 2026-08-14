@@ -3,31 +3,20 @@
 <head>
   <title>Contact Us - East Enable</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-    }
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; opacity: 0; transition: opacity 0.6s ease-in-out; }
+    body.fade-in { opacity: 1; }
     .contact-container {
       max-width: 700px;
       margin: 50px auto;
       padding: 30px;
-      background-color: #fdf6f0; /* soft beige */
+      background-color: #fdf6f0;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: center;
     }
-    .contact-container h1 {
-      color: #a0522d;
-      margin-bottom: 20px;
-    }
-    .contact-container p {
-      color: #333;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-    /* Styled buttons/links */
-    .contact-container a {
+    h1 { color: #a0522d; margin-bottom: 20px; }
+    p { color: #333; line-height: 1.6; margin-bottom: 15px; }
+    a.button {
       display: inline-block;
       background-color: #a0522d;
       color: white;
@@ -38,23 +27,34 @@
       transition: background-color 0.3s;
       margin: 10px;
     }
-    .contact-container a:hover {
-      background-color: #8b4513;
-    }
+    a.button:hover { background-color: #8b4513; }
   </style>
 </head>
 <body>
   <div class="contact-container">
     <h1>Contact Us</h1>
-    <p>We’d love to hear from you! This website is built to make connecting with East Enable simple and direct. Whether you want to ask a question, request a service, or just say hello — we’re only a click away.</p>
-
-    <p>Use the buttons below to reach us instantly:</p>
-    <a href="tel:+233208000422">📞 Call Us Now</a>
-    <a href="mailto:sedinamfiifi12345@gmail.com">✉️ Email Us</a>
-
-    <p>You can also learn more about us on the <a href="about.html">About page</a> or explore what we offer on the <a href="services.html">Services page</a>. Every part of this site is designed to guide you smoothly to the information you need.</p>
-
+    <p>We’d love to hear from you! Use the buttons below to reach us instantly.</p>
+    <a href="tel:+233XXXXXXXXX" class="button">📞 Call Us Now</a>
+    <a href="mailto:info@eastenable.com" class="button">✉️ Email Us</a>
+    <p>Or explore more on our <a href="about.html" class="button">About</a> and <a href="services.html" class="button">Services</a> pages.</p>
     <p>Location: Tema, Greater Accra, Ghana</p>
+    <a href="index.html" class="button">Return to Home Page</a>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        const href = link.getAttribute("href");
+        if (href && !href.startsWith("#")) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          setTimeout(() => { window.location.href = href; }, 600);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
