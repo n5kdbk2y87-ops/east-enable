@@ -7,31 +7,22 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #fff;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
     }
+    body.fade-in { opacity: 1; }
     .about-container {
       max-width: 800px;
       margin: 50px auto;
       padding: 30px;
-      background-color: #fdf6f0; /* soft beige */
+      background-color: #fdf6f0;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .about-container h1 {
-      color: #a0522d;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .about-container h2 {
-      color: #8b4513;
-      margin-top: 30px;
-      margin-bottom: 15px;
-    }
-    .about-container p {
-      line-height: 1.6;
-      color: #333;
-    }
-    /* Better design for links */
-    .about-container a {
+    h1 { color: #a0522d; text-align: center; margin-bottom: 20px; }
+    h2 { color: #8b4513; margin-top: 30px; margin-bottom: 15px; }
+    p { line-height: 1.6; color: #333; }
+    a.button {
       display: inline-block;
       background-color: #a0522d;
       color: white;
@@ -40,29 +31,36 @@
       text-decoration: none;
       font-weight: bold;
       transition: background-color 0.3s;
-      margin-top: 10px;
+      margin-top: 20px;
     }
-    .about-container a:hover {
-      background-color: #8b4513;
-    }
+    a.button:hover { background-color: #8b4513; }
   </style>
 </head>
 <body>
   <div class="about-container">
     <h1>About East Enable</h1>
-    <p>Welcome to East Enable — your gateway to modern digital solutions. Our website is designed to showcase who we are, what we do, and how we can help your business grow online.</p>
-
-    <h2>Who We Are</h2>
-    <p>East Enable is a creative agency based in Tema, Ghana. We specialize in web design, branding, and digital marketing. Our team is passionate about building websites that are not only visually appealing but also functional and user‑friendly.</p>
-
-    <h2>What This Website Offers</h2>
-    <p>This site is more than just an online presence — it’s a hub where you can explore our services, learn about our mission, and connect with us directly. From the <a href="index.html">Home page</a> you’ll get a quick overview, while the <a href="services.html">Services page</a> dives into the details of what we provide. The <a href="contact.html">Contact page</a> makes it easy to reach us instantly with a call or email.</p>
-
+    <p>Welcome to East Enable — your gateway to modern digital solutions. This website showcases our mission, services, and values, helping businesses thrive online.</p>
     <h2>Our Vision</h2>
-    <p>We believe every business deserves a strong digital identity. That’s why this website is built to reflect our values: simplicity, professionalism, and creativity. Whether you’re a startup or an established company, East Enable is here to help you shine online.</p>
-
-    <h2>Why Choose Us</h2>
-    <p>Unlike generic templates, our approach is tailored. This website itself is an example of our work — clean design, clear navigation, and a focus on user experience. We want visitors to feel welcome, informed, and inspired to take action.</p>
+    <p>We believe every business deserves a strong digital identity. This site reflects our values: simplicity, professionalism, and creativity.</p>
+    <h2>Explore More</h2>
+    <p>Check out our <a href="services.html" class="button">Services</a> or <a href="contact.html" class="button">Contact Us</a>.</p>
+    <a href="index.html" class="button">Return to Home Page</a>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        const href = link.getAttribute("href");
+        if (href && !href.startsWith("#")) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          setTimeout(() => { window.location.href = href; }, 600);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
