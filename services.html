@@ -1,59 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Our Services - East Enable</title>
+  <title>Services - East Enable</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #0a1f44; color: #e6f0ff; opacity: 0; transition: opacity 0.6s ease-in-out; }
-    body.fade-in { opacity: 1; }
-    .services-container { max-width: 900px; margin: 50px auto; padding: 30px; }
-    h1 { text-align: center; color: #66b2ff; margin-bottom: 30px; }
-    .service-card {
-      background-color: #132d66;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    .service-card h2 { color: #99ccff; margin-bottom: 10px; }
-    .service-card p { line-height: 1.6; margin-bottom: 15px; }
-    a.button {
-      display: inline-block;
-      background-color: #0059b3;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-    a.button:hover { background-color: #004080; }
+    body { margin:0; font-family:Arial; background:#ffffff; color:#0a1f44; opacity:0; transition:opacity 0.6s; }
+    body.fade-in { opacity:1; }
+    .services-container { max-width:800px; margin:50px auto; padding:30px; background:#f2f6ff; border-radius:8px; text-align:center; }
+    h1 { color:#0a1f44; }
+    h2 { color:#0059b3; margin-top:20px; }
+    p { line-height:1.6; }
+    a.button { background:#0059b3; color:white; padding:12px 20px; border-radius:6px; text-decoration:none; font-weight:bold; margin:10px; display:inline-block; }
+    a.button:hover { background:#004080; }
   </style>
 </head>
 <body>
   <div class="services-container">
     <h1>Our Services</h1>
-    <div class="service-card">
-      <h2>🌐 Web Design</h2>
-      <p>Responsive, modern websites tailored to your brand.</p>
-      <a href="contact.html" class="button">Learn More</a>
-    </div>
-    <div class="service-card">
-      <h2>🎨 Branding</h2>
-      <p>Logo design, color palettes, and brand identity systems.</p>
-      <a href="contact.html" class="button">Learn More</a>
-    </div>
-    <div class="service-card">
-      <h2>📈 Digital Marketing</h2>
-      <p>SEO, social media campaigns, and online growth strategies.</p>
-      <a href="contact.html" class="button">Learn More</a>
-    </div>
-    <a href="index.html" class="button">Return to Home Page</a>
+    <p>East Enable offers a range of digital solutions designed to help your business stand out online.</p>
+    
+    <h2>Web Design & Development</h2>
+    <p>We build responsive, user-friendly websites that reflect your brand identity and engage your audience. From simple landing pages to multi-page corporate sites, we’ve got you covered.</p>
+    
+    <h2>Branding</h2>
+    <p>Your brand is more than a logo. We help you create a consistent identity across platforms, ensuring your business is memorable and professional.</p>
+    
+    <h2>Digital Marketing</h2>
+    <p>We design campaigns that drive traffic, generate leads, and boost sales. Our strategies include social media marketing, SEO, and targeted advertising.</p>
+    
+    <p>Ready to take your business to the next level? <a href="contact.html" class="button">Contact Us</a> today.</p>
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.body.classList.add("fade-in");
-    });
+    document.addEventListener("DOMContentLoaded", () => { document.body.classList.add("fade-in"); });
+    window.addEventListener("pageshow", (event) => { if (event.persisted) { document.body.classList.add("fade-in"); } });
     document.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", e => {
         const href = link.getAttribute("href");
