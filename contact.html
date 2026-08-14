@@ -3,20 +3,27 @@
 <head>
   <title>Contact Us - East Enable</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #0a1f44; color: #e6f0ff; opacity: 0; transition: opacity 0.6s ease-in-out; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a1f44; /* dark blue */
+      color: #e6f0ff; /* light blue text */
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
     body.fade-in { opacity: 1; }
     .contact-container {
       max-width: 700px;
       margin: 50px auto;
       padding: 30px;
-      background-color: #132d66;
+      background-color: #132d66; /* lighter dark blue */
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       text-align: center;
     }
     h1 { color: #66b2ff; margin-bottom: 20px; }
     p { line-height: 1.6; margin-bottom: 15px; }
-    a.button {
+    a.button, input[type="submit"] {
       display: inline-block;
       background-color: #0059b3;
       color: white;
@@ -26,17 +33,51 @@
       font-weight: bold;
       transition: background-color 0.3s;
       margin: 10px;
+      cursor: pointer;
+      border: none;
     }
-    a.button:hover { background-color: #004080; }
+    a.button:hover, input[type="submit"]:hover { background-color: #004080; }
+    form {
+      margin-top: 20px;
+      text-align: left;
+    }
+    label { display: block; margin-top: 10px; color: #99ccff; }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: none;
+      font-family: Arial, sans-serif;
+    }
+    textarea { height: 100px; }
   </style>
 </head>
 <body>
   <div class="contact-container">
     <h1>Contact Us</h1>
     <p>We’d love to hear from you! Use the buttons below to reach us instantly.</p>
-    <a href="tel:+233XXXXXXXXX" class="button">📞 Call Us Now</a>
-    <a href="mailto:info@eastenable.com" class="button">✉️ Email Us</a>
-    <p>Or explore more on our <a href="about.html" class="button">About</a> and <a href="services.html" class="button">Services</a> pages.</p>
+
+    <!-- Call and Email Buttons -->
+    <a href="tel:+233208000422" class="button">📞 Call Us Now</a>
+    <a href="mailto:sedinamfiifi12345@gmail.com?subject=Inquiry%20from%20East%20Enable%20Website" class="button">✉️ Email Us</a>
+
+    <!-- Contact Form (Formspree) -->
+    <p>Or send us a direct message using the form below:</p>
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <input type="submit" value="Send Message">
+    </form>
+
+    <p>Explore more on our <a href="about.html" class="button">About</a> and <a href="services.html" class="button">Services</a> pages.</p>
     <p>Location: Tema, Greater Accra, Ghana</p>
     <a href="index.html" class="button">Return to Home Page</a>
   </div>
