@@ -5,23 +5,62 @@
   <style>
     body { margin:0; font-family:Arial; background:#ffffff; color:#0a1f44; opacity:0; transition:opacity 0.6s; }
     body.fade-in { opacity:1; }
-    .contact-container { max-width:700px; margin:50px auto; padding:30px; background:#f2f6ff; border-radius:8px; text-align:center; }
+    .contact-container { max-width:800px; margin:50px auto; padding:40px; background:#f2f6ff; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); text-align:center; }
     h1 { color:#0a1f44; }
-    p { line-height:1.6; }
+    h2 { color:#0059b3; margin-top:20px; }
+    p { line-height:1.6; margin-bottom:15px; }
     a.button, input[type="submit"] { background:#0059b3; color:white; padding:12px 20px; border-radius:6px; text-decoration:none; font-weight:bold; margin:10px; display:inline-block; border:none; cursor:pointer; }
     a.button:hover, input[type="submit"]:hover { background:#004080; }
     form { margin-top:20px; text-align:left; }
     label { display:block; margin-top:10px; color:#0a1f44; }
     input, textarea { width:100%; padding:10px; margin-top:5px; border-radius:6px; border:1px solid #ccc; font-family:Arial; }
-    textarea { height:100px; }
+    textarea { height:120px; }
   </style>
 </head>
 <body>
   <div class="contact-container">
     <h1>Contact Us</h1>
-    <p>We’d love to hear from you! Use the buttons below to reach us instantly.</p>
-
+    <p>We’d love to hear from you! Whether you’re ready to start a project, have a question about our services, or simply want to connect, East Enable is here to help.</p>
+    
+    <h2>Reach Us Directly</h2>
+    <p>You can call or email us instantly using the buttons below:</p>
     <a href="tel:+233208000422" class="button">📞 Call Us Now</a>
     <a href="email.html" class="button">✉️ Email Us</a>
+    
+    <h2>Send a Message</h2>
+    <p>Prefer to write to us directly? Use the form below and we’ll respond as soon as possible.</p>
+    <form action="https://formspree.io/f/xrpzlrwz" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="_replyto" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <input type="submit" value="Send Message">
+    </form>
+    
+    <h2>Our Location</h2>
+    <p>East Enable is proudly based in Tema, Greater Accra, Ghana. We serve clients locally and internationally, helping businesses grow through digital innovation.</p>
+    
+    <p>Explore more about us on our <a href="about.html" class="button">About</a> page, discover what we offer on our <a href="services.html" class="button">Services</a> page, or return to the <a href="index.html" class="button">Home</a> page.</p>
+  </div>
 
-    <p>Or send us a direct message using the form below:</p
+  <script>
+    document.addEventListener("DOMContentLoaded", () => { document.body.classList.add("fade-in"); });
+    window.addEventListener("pageshow", (event) => { if (event.persisted) { document.body.classList.add("fade-in"); } });
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        const href = link.getAttribute("href");
+        if (href && !href.startsWith("#")) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          setTimeout(() => { window.location.href = href; }, 600);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
