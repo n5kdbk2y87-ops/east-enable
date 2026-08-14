@@ -1,123 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>East Enable - Business Services</title>
+  <title>East Enable - Home</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #ffffff; /* White background */
-      color: #4a3c2a; /* Dark brown text */
+      font-family: Arial, sans-serif;
+      background-color: #0a1f44; /* dark blue */
+      color: #e6f0ff; /* light blue text */
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
     }
-    header {
-      background: #a67c52; /* Light brown header */
-      color: white;
-      padding: 30px;
+    body.fade-in { opacity: 1; }
+    .home-container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 40px;
+      background-color: #132d66; /* lighter dark blue */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       text-align: center;
     }
-    nav {
-      background: #c19a6b; /* Softer brown for navigation */
-      padding: 15px;
-      text-align: center;
-    }
-    nav a {
+    h1 { color: #66b2ff; margin-bottom: 20px; }
+    h2 { color: #99ccff; margin-top: 30px; margin-bottom: 15px; }
+    p { line-height: 1.6; margin-bottom: 20px; }
+    a.button {
+      display: inline-block;
+      background-color: #0059b3;
       color: white;
-      margin: 0 20px;
+      padding: 12px 20px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
+      transition: background-color 0.3s;
+      margin: 10px;
     }
-    section {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #a67c52; /* Light brown headings */
-    }
-    .services ul {
-      list-style: none;
-      padding: 0;
-    }
-    .services li {
-      background: #f5efe6; /* Very light brown box */
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 5px;
-    }
-    footer {
-      background: #4a3c2a; /* Dark brown footer */
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
+    a.button:hover { background-color: #004080; }
   </style>
 </head>
 <body>
+  <div class="home-container">
+    <h1>Welcome to East Enable</h1>
+    <p>We are a creative agency based in Tema, Ghana, specializing in web design, branding, and digital marketing. Our mission is to empower businesses with modern digital solutions that make a lasting impact.</p>
+    
+    <h2>About East Enable</h2>
+    <p>East Enable was founded with a simple vision: to help businesses shine online. We believe that a strong digital presence is essential in today’s world, and our website reflects that belief. Here you’ll find our story, our services, and the values that guide us.</p>
+    <p>Our team combines creativity with technology to deliver websites that are not only visually stunning but also functional and user‑friendly. From startups to established companies, we tailor solutions that fit your unique needs.</p>
+    <p>This site is designed to be your gateway into our world — explore our <a href="about.html" class="button">About Us</a> page to learn more about our mission and values, check out our <a href="services.html" class="button">Services</a> to see what we offer, or head to <a href="contact.html" class="button">Contact Us</a> to connect directly.</p>
 
-  <header>
-    <h1>East Enable</h1>
-    <p>Empowering businesses in Africa and beyond</p>
-  </header>
+    <a href="index.html" class="button">Return to Home Page</a>
+  </div>
 
- <nav>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      At East Enable, we believe that every business deserves the opportunity to thrive in the digital age. 
-      Our company was founded with a clear vision: to empower entrepreneurs, startups, and established organizations 
-      across Africa and globally by providing the tools they need to succeed online.
-    </p>
-    <p>
-      We specialize in three core areas: web design, branding, and digital marketing. But our mission goes beyond 
-      simply offering services — we aim to be a trusted partner in your growth journey. By combining creativity, 
-      technology, and strategy, we deliver solutions that are not only visually appealing but also practical, 
-      scalable, and results-driven.
-    </p>
-    <p>
-      Whether you are a small business looking to establish your first online presence, a growing company seeking 
-      to expand your reach, or a larger organization aiming to strengthen your brand identity, East Enable is here 
-      to support you. We understand the challenges businesses face in today’s competitive marketplace, and we are 
-      committed to helping you overcome them with innovative digital solutions.
-    </p>
-    <p>
-      Our team is passionate about excellence, innovation, and collaboration. We take pride in working closely 
-      with our clients, listening to their needs, and tailoring our services to meet their unique goals. By 
-      choosing East Enable, you are not just hiring a service provider — you are partnering with professionals 
-      who care deeply about your success and who will walk with you every step of the way.
-    </p>
-    <p>
-      Together, let’s enable your business to reach new heights and unlock its full potential in the digital world.
-    </p>
-  </section>
-
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li><strong>Web Design:</strong> Modern, responsive websites tailored to your brand and audience.</li>
-      <li><strong>Branding:</strong> Logos, visual identity, and brand strategy that make you stand out.</li>
-      <li><strong>Digital Marketing:</strong> Social media campaigns, SEO, and online advertising to grow your reach.</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: sedinamfiifi12345@gmail.com</p>
-    <p>Phone (Local): 020 800 0422</p>
-    <p>Phone (International): +233 20 800 0422</p>
-    <p>Follow us on social media for updates and offers.</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 East Enable. All rights reserved.</p>
-  </footer>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", e => {
+        const href = link.getAttribute("href");
+        if (href && !href.startsWith("#")) {
+          e.preventDefault();
+          document.body.classList.remove("fade-in");
+          setTimeout(() => { window.location.href = href; }, 600);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
